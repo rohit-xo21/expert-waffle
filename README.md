@@ -90,18 +90,5 @@ Streamlit will open a local URL (usually `http://localhost:8501`) where you can 
 
 The app uses SQLite (`test.db`) in the project root by default. The DB and tables are created automatically at startup via `create_db_and_tables()` called during the FastAPI app lifespan.
 
-If you change models and want to preserve data, use Alembic to create migrations instead of deleting `test.db`. For quick local development you can delete `test.db` and restart the server to recreate the schema.
-
-## Troubleshooting
-
-- "ModuleNotFoundError: No module named 'streamlit'": install Streamlit into the active venv:
-
-```bash
-python -m pip install streamlit
-```
-
-- Connection refused errors from the frontend (requests.exceptions.ConnectionError): make sure the backend is running (see run steps above). The Streamlit UI also displays friendly messages when the backend is unreachable.
-
-- Errors building `pyarrow` or other compiled wheels on Windows: use Python 3.11 or conda-forge, or install the full Visual Studio Build Tools + CMake (less recommended for most devs).
 
 
